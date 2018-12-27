@@ -45,7 +45,7 @@ export class LifecycleEventsPage {
     return new Promise((resolve, reject) => {
       console.log('Aguardando 2 segundos');
       setTimeout(() => {
-        let number = Math.round(Math.random() * 100);
+let number = Math.round(Math.random() * 100);
         if (number % 2 == 0) {
           resolve();
           console.log(`${number} - Autorizado`);
