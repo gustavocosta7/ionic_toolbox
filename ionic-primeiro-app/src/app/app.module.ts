@@ -1,5 +1,7 @@
+import { LifecycleEventsPage } from './../pages/lifecycle-events/lifecycle-events';
+import { ContactPage } from './../pages/contact/contact';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, NgZone } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -10,7 +12,7 @@ import { Teste1Page } from '../pages/teste1/teste1';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
-  declarations: [MyApp, Teste1Page],
+  declarations: [MyApp, Teste1Page, ContactPage, LifecycleEventsPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
@@ -18,12 +20,12 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     })
   ],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, Teste1Page],
+  entryComponents: [ContactPage, MyApp, Teste1Page, LifecycleEventsPage],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
-    { provide: LocationStrategy, useClass: PathLocationStrategy }
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    // { provide: LocationStrategy, useClass: PathLocationStrategy }
   ]
 })
 export class AppModule {}

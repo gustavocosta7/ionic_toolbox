@@ -1,3 +1,5 @@
+import { LifecycleEventsPage } from './../lifecycle-events/lifecycle-events';
+import { ContactPage } from './../contact/contact';
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 
@@ -15,5 +17,26 @@ export class HomePage {
     this.navCtrl.push('about-page', {
       id: 10
     });
+  }
+
+  pushPage(): void {
+    this.navCtrl.push(ContactPage, {
+      type: 'push',
+      curso: 'Ionic',
+      mensagem: () => {
+        console.log('Essa é uma mensagem passada por parametro');
+      }
+    });
+  }
+
+  lifecycle(): void {
+    this.navCtrl
+      .push(LifecycleEventsPage)
+      .then(() => {
+        console.log('pagina empilhada');
+      })
+      .catch(error => {
+        console.log('Acesso não autorizado');
+      });
   }
 }
