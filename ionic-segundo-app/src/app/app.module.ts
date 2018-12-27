@@ -1,3 +1,4 @@
+import { ConfigPage } from './../pages/config/config';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -12,7 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
-  declarations: [MyApp, AboutPage, ContactPage, HomePage, TabsPage],
+  declarations: [MyApp, AboutPage, ContactPage, HomePage, TabsPage, ConfigPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
@@ -29,7 +30,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     })
   ],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, AboutPage, ContactPage, HomePage, TabsPage],
+  entryComponents: [
+    ConfigPage,
+    MyApp,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage
+  ],
   providers: [
     StatusBar,
     SplashScreen,
